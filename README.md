@@ -6,11 +6,6 @@ The project focuses on creating a responsive, accessible, and visually appealing
 
 ---
 
-## 📸 Preview
-
-> Add a screenshot or GIF here after deployment.
-
----
 
 ## ✨ Features
 
@@ -125,8 +120,7 @@ This project helped me gain practical experience with:
 
 ## 🌐 Live Demo
 
-Coming soon...
-
+https://neuroflow-ai-one.vercel.app/
 ---
 
 ## 👨‍💻 Author

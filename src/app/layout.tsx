@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   creator: "NeuroFlow AI",
   publisher: "NeuroFlow AI",
   alternates: {
-    canonical: "https://neuroflow.ai",
+    canonical: "https://neuroflow-ai-one.vercel.app/",
   },
   robots: {
     index: true,
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://neuroflow.ai",
+    url: "https://neuroflow-ai-one.vercel.app/",
     siteName: "NeuroFlow AI",
     title: "NeuroFlow AI — Intelligent Data Automation Platform",
     description:
@@ -61,7 +61,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: "NeuroFlow AI",
-  url: "https://neuroflow.ai",
+  url: "https://neuroflow-ai-one.vercel.app/",
   description:
     "Intelligent data automation platform. Connect, process, and act on data at scale without writing a single pipeline.",
   applicationCategory: "BusinessApplication",
