@@ -77,7 +77,7 @@ git clone https://github.com/Heemadhawala-R/Neuroflow-ai.git
 Move into the project folder
 
 ```bash
-cd neuroflow-ai
+cd NeuroFlow-AI
 ```
 
 Install dependencies
@@ -133,10 +133,6 @@ Coming soon...
 
 **Heemadhawala R**
 
-* GitHub: https://github.com/YOUR_USERNAME
-* LinkedIn: https://linkedin.com/in/YOUR_LINKEDIN
-
----
 
 ### Hackathon Project
 
