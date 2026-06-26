@@ -1,0 +1,267 @@
+.section {
+  padding: 6rem 1.5rem;
+  background: var(--bg);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-hover);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.heading {
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--secondary);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.sub {
+  font-family: "Inter", sans-serif;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ─── Bento Grid ─── */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 1.25rem;
+}
+
+.bentoCard {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.75rem;
+  overflow: hidden;
+  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, border-color 0.18s ease-out;
+  cursor: default;
+}
+
+.bentoCard:hover,
+.bentoCard:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(17, 76, 90, 0.25);
+  outline: none;
+}
+
+.bentoCard:hover .cardGlow,
+.bentoCard:focus-visible .cardGlow {
+  opacity: 1;
+}
+
+/* Grid positions */
+.card_large  { grid-column: span 2; grid-row: span 1; }
+.card_medium { grid-column: span 1; }
+.card_small  { grid-column: span 1; }
+
+.cardInner { position: relative; z-index: 1; }
+
+.cardGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at top left,
+    rgba(255, 200, 1, 0.08) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.featureTag {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: var(--surface);
+  color: var(--primary);
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--surface-2);
+}
+
+.iconWrap {
+  width: 40px;
+  height: 40px;
+  background: var(--surface);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.18s ease;
+}
+
+.bentoCard:hover .iconWrap {
+  background: var(--accent);
+}
+
+.featureIcon {
+  filter: invert(18%) sepia(69%) saturate(600%) hue-rotate(163deg) brightness(85%);
+  transition: filter 0.18s ease;
+}
+
+.bentoCard:hover .featureIcon {
+  filter: invert(12%) sepia(50%) saturate(400%) hue-rotate(163deg) brightness(70%);
+}
+
+.featureTitle {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--secondary);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.6rem;
+}
+
+.featureDesc {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ─── Accordion (Mobile) ─── */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.accordionItem {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.accordionItem.accordionOpen {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(17, 76, 90, 0.2);
+}
+
+.accordionTrigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease;
+}
+
+.accordionTrigger:hover { background: var(--bg); }
+
+.accordionLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.accordionIconWrap {
+  width: 34px;
+  height: 34px;
+  background: var(--surface);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.accordionFeatureIcon {
+  filter: invert(18%) sepia(69%) saturate(600%) hue-rotate(163deg) brightness(85%);
+}
+
+.accordionTitle {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.accordionChevron {
+  filter: invert(18%) sepia(69%) saturate(600%) hue-rotate(163deg) brightness(85%);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.accordionOpen .accordionChevron {
+  transform: rotate(180deg);
+}
+
+.accordionPanel {
+  padding: 0 1.25rem 1.25rem;
+  animation: panelOpen 0.3s ease-in-out both;
+}
+
+@keyframes panelOpen {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.accordionTag {
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: var(--surface);
+  color: var(--primary);
+  padding: 0.2rem 0.55rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--surface-2);
+  margin-bottom: 0.6rem;
+}
+
+.accordionDesc {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .bento { grid-template-columns: repeat(2, 1fr); }
+  .card_large { grid-column: span 2; }
+  .card_small { grid-column: span 1; }
+}

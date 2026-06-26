@@ -1,26 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #F1F6F4;
+  --primary: #114C5A;
+  --secondary: #172B36;
+  --accent: #FFC801;
+  --accent-hover: #FF9932;
+  --surface: #D9E8E2;
+  --surface-2: #C8DCDA;
+  --text-primary: #172B36;
+  --text-muted: #4A6872;
+  --text-light: #7A9BA8;
+  --white: #ffffff;
+  --border: rgba(17, 76, 90, 0.12);
+  --shadow-sm: 0 1px 3px rgba(17, 76, 90, 0.08);
+  --shadow-md: 0 4px 16px rgba(17, 76, 90, 0.12);
+  --shadow-lg: 0 12px 40px rgba(17, 76, 90, 0.16);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--secondary);
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--surface-2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+.font-mono { font-family: "JetBrains Mono", monospace; }
+.font-sans { font-family: "Inter", sans-serif; }
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass {
+  background: rgba(241, 246, 244, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; max-height: 0; }
+  to   { opacity: 1; max-height: 500px; }
+}
+
+.animate-fade-up  { animation: fadeUp  0.35s ease-out both; }
+.animate-fade-in  { animation: fadeIn  0.25s ease-out both; }
+/* FIXED: compressed from 0.4s → 0.25s so last element fits within 500ms window */
+.animate-scale-in { animation: scaleIn 0.25s ease-out both; }
+
+/* FIXED: tightened delay ladder so orchestration ceiling ≤ 500ms
+   Longest chain: .animate-scale-in (.25s) + .delay-400 (.25s) = 0.50s ✓ */
+.delay-100 { animation-delay: 0.06s; }
+.delay-200 { animation-delay: 0.12s; }
+.delay-300 { animation-delay: 0.18s; }
+.delay-400 { animation-delay: 0.25s; }
+.delay-500 { animation-delay: 0.32s; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
