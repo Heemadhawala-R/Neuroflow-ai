@@ -71,7 +71,7 @@ src
 Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/neuroflow-ai.git
+git clone https://github.com/Heemadhawala-R/Neuroflow-ai.git
 ```
 
 Move into the project folder
